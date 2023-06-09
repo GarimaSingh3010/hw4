@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user["username"] = params["user"]["username"]
-    @user["email"] = params["user"]["email"]
+    @user["email_id"] = params["user"]["email_id"]
     @user["password"] = BCrypt::Password.create(params["user"]["password"])
     @user.save
     session["user_id"] = @user["id"]
